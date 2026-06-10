@@ -155,15 +155,15 @@ init_term_test (int converter, double src_ratio)
 		printf ("\tsrc_ratio             : %.4f\n", src_ratio) ;
 		printf ("\tinput_len             : %d\n"
 				"\tinput_len * src_ratio : %f\n", input_len, input_len * src_ratio) ;
-		printf ("\toutput_frames_gen     : %ld\n\n", src_data.output_frames_gen) ;
+		printf ("\toutput_frames_gen     : %lld\n\n", src_data.output_frames_gen) ;
 		exit (1) ;
 		} ;
 
 	if (labs (src_data.input_frames_used - input_len) > 1)
-	{	printf ("\n\nLine %d : input_frames_used should be %d, is %ld.\n\n",
+	{	printf ("\n\nLine %d : input_frames_used should be %d, is %lld.\n\n",
 					 __LINE__, input_len, src_data.input_frames_used) ;
 		printf ("\tsrc_ratio  : %.4f\n", src_ratio) ;
-		printf ("\tinput_len  : %d\n\tinput_used : %ld\n\n", input_len, src_data.input_frames_used) ;
+		printf ("\tinput_len  : %d\n\tinput_used : %lld\n\n", input_len, src_data.input_frames_used) ;
 		exit (1) ;
 		} ;
 
@@ -243,8 +243,8 @@ for (k = 0 ; k < LONG_BUFFER_LEN ; k++) input [k] = k * 1.0f ;
 
 		if ((error = src_process (src_state, &src_data)))
 		{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
-			printf ("  src_data.input_frames  : %ld\n", src_data.input_frames) ;
-			printf ("  src_data.output_frames : %ld\n\n", src_data.output_frames) ;
+			printf ("  src_data.input_frames  : %lld\n", src_data.input_frames) ;
+			printf ("  src_data.output_frames : %lld\n\n", src_data.output_frames) ;
 			exit (1) ;
 			} ;
 
@@ -253,20 +253,20 @@ for (k = 0 ; k < LONG_BUFFER_LEN ; k++) input [k] = k * 1.0f ;
 
 		if (src_data.input_frames_used > src_data.input_frames)
 		{	printf ("\n\nLine %d : input_frames_used > input_frames\n\n", __LINE__) ;
-			printf ("  src_data.input_frames      : %ld\n", src_data.input_frames) ;
-			printf ("  src_data.input_frames_used : %ld\n", src_data.input_frames_used) ;
-			printf ("  src_data.output_frames     : %ld\n", src_data.output_frames) ;
-			printf ("  src_data.output_frames_gen : %ld\n\n", src_data.output_frames_gen) ;
+			printf ("  src_data.input_frames      : %lld\n", src_data.input_frames) ;
+			printf ("  src_data.input_frames_used : %lld\n", src_data.input_frames_used) ;
+			printf ("  src_data.output_frames     : %lld\n", src_data.output_frames) ;
+			printf ("  src_data.output_frames_gen : %lld\n\n", src_data.output_frames_gen) ;
 			exit (1) ;
 			} ;
 
 		if (src_data.input_frames_used < 0)
-		{	printf ("\n\nLine %d : input_frames_used (%ld) < 0\n\n", __LINE__, src_data.input_frames_used) ;
+		{	printf ("\n\nLine %d : input_frames_used (%lld) < 0\n\n", __LINE__, src_data.input_frames_used) ;
 			exit (1) ;
 			} ;
 
 		if (src_data.output_frames_gen < 0)
-		{	printf ("\n\nLine %d : output_frames_gen (%ld) < 0\n\n", __LINE__, src_data.output_frames_gen) ;
+		{	printf ("\n\nLine %d : output_frames_gen (%lld) < 0\n\n", __LINE__, src_data.output_frames_gen) ;
 			exit (1) ;
 			} ;
 
@@ -284,12 +284,12 @@ for (k = 0 ; k < LONG_BUFFER_LEN ; k++) input [k] = k * 1.0f ;
 			} ;
 
 		if (src_data.input_frames_used > input_len)
-		{	printf ("\n\nLine %d : input_frames_used (%ld) > %d\n\n", __LINE__, src_data.input_frames_used, input_len) ;
+		{	printf ("\n\nLine %d : input_frames_used (%lld) > %d\n\n", __LINE__, src_data.input_frames_used, input_len) ;
 			exit (1) ;
 			} ;
 
 		if (src_data.output_frames_gen > output_len)
-		{	printf ("\n\nLine %d : output_frames_gen (%ld) > %d\n\n", __LINE__, src_data.output_frames_gen, output_len) ;
+		{	printf ("\n\nLine %d : output_frames_gen (%lld) > %d\n\n", __LINE__, src_data.output_frames_gen, output_len) ;
 			exit (1) ;
 			} ;
 

@@ -63,8 +63,8 @@ clone_test (int converter)
 
 	if ((error = src_process (src_state, &src_data)))
 	{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
-		printf ("  src_data.input_frames  : %ld\n", src_data.input_frames) ;
-		printf ("  src_data.output_frames : %ld\n\n", src_data.output_frames) ;
+		printf ("  src_data.input_frames  : %lld\n", src_data.input_frames) ;
+		printf ("  src_data.output_frames : %lld\n\n", src_data.output_frames) ;
 		exit (1) ;
 		} ;
 
@@ -82,21 +82,21 @@ clone_test (int converter)
 
 	if ((error = src_process (src_state, &src_data)))
 	{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
-		printf ("  src_data.input_frames  : %ld\n", src_data.input_frames) ;
-		printf ("  src_data.output_frames : %ld\n\n", src_data.output_frames) ;
+		printf ("  src_data.input_frames  : %lld\n", src_data.input_frames) ;
+		printf ("  src_data.output_frames : %lld\n\n", src_data.output_frames) ;
 		exit (1) ;
 		} ;
 
 	if ((error = src_process (src_state_cloned, &src_data_cloned)))
 	{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
-		printf ("  src_data.input_frames  : %ld\n", src_data.input_frames) ;
-		printf ("  src_data.output_frames : %ld\n\n", src_data.output_frames) ;
+		printf ("  src_data.input_frames  : %lld\n", src_data.input_frames) ;
+		printf ("  src_data.output_frames : %lld\n\n", src_data.output_frames) ;
 		exit (1) ;
 		} ;
 
 	/* Check that both handles generated the same number of output frames */
 	if (src_data.output_frames_gen != src_data_cloned.output_frames_gen)
-	{	printf ("\n\nLine %d : cloned output_frames_gen (%ld) != original (%ld)\n\n", __LINE__,
+	{	printf ("\n\nLine %d : cloned output_frames_gen (%lld) != original (%lld)\n\n", __LINE__,
 				src_data_cloned.output_frames_gen, src_data.output_frames_gen) ;
 		exit (1) ;
 		} ;

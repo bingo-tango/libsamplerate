@@ -102,8 +102,8 @@ stream_test (int converter, double src_ratio)
 	{	if ((error = src_process (src_state, &src_data)))
 		{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
 
-printf ("src_data.input_frames  : %ld\n", src_data.input_frames) ;
-printf ("src_data.output_frames : %ld\n", src_data.output_frames) ;
+printf ("src_data.input_frames  : %lld\n", src_data.input_frames) ;
+printf ("src_data.output_frames : %lld\n", src_data.output_frames) ;
 
 			exit (1) ;
 			} ;

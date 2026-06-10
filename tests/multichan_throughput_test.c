@@ -80,14 +80,14 @@ throughput_test (int converter, int channels, long *best_throughput)
 	while (duration < 5.0) ;
 
 	if (src_data.input_frames_used != src_data.input_frames)
-	{	printf ("\n\nLine %d : input frames used %ld should be %ld\n", __LINE__, src_data.input_frames_used, src_data.input_frames) ;
+	{	printf ("\n\nLine %d : input frames used %lld should be %lld\n", __LINE__, src_data.input_frames_used, src_data.input_frames) ;
 		exit (1) ;
 		} ;
 
 	if (fabs (src_data.src_ratio * src_data.input_frames_used - src_data.output_frames_gen) > 2)
 	{	printf ("\n\nLine %d : input / output length mismatch.\n\n", __LINE__) ;
 		printf ("    input len  : %d\n", ARRAY_LEN (input) / channels) ;
-		printf ("    output len : %ld (should be %g +/- 2)\n\n", src_data.output_frames_gen,
+		printf ("    output len : %lld (should be %g +/- 2)\n\n", src_data.output_frames_gen,
 				floor (0.5 + src_data.src_ratio * src_data.input_frames_used)) ;
 		exit (1) ;
 		} ;

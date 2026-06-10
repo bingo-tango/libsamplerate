@@ -1,5 +1,20 @@
 ![Logo](docs/SRC.png)
 
+This is a fork of libsamplerate to add support for 64-bit frame sizes for Windows.
+
+To build: 
+- Make sure Visual Studio 2026 is installed with Desktop development with C++.
+- Install CMkake.
+- Open an "X64 Native Tools Command Prompt for VS", navigate to this repo folder and run the following commands:
+
+```aiignore
+mkdir build64
+cd build64
+cmake -G "Visual Studio 18 2026" -A x64 -DBUILD_SHARED_LIBS=ON ..
+cmake --build . --config Release
+```
+
+
 This is libsamplerate, `0.2.2`.
 
 libsamplerate (also known as Secret Rabbit Code) is a library for performing sample rate conversion of audio data.

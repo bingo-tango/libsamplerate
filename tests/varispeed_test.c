@@ -116,15 +116,15 @@ varispeed_test (int converter, double target_snr)
 
 	if ((error = src_process (src_state, &src_data)))
 	{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
-		printf ("  src_data.input_frames  : %ld\n", src_data.input_frames) ;
-		printf ("  src_data.output_frames : %ld\n\n", src_data.output_frames) ;
+		printf ("  src_data.input_frames  : %lld\n", src_data.input_frames) ;
+		printf ("  src_data.output_frames : %lld\n\n", src_data.output_frames) ;
 		exit (1) ;
 		} ;
 
 	if (src_data.input_frames_used != input_len)
 	{	printf ("\n\nLine %d : unused input.\n", __LINE__) ;
 		printf ("\tinput_len         : %d\n", input_len) ;
-		printf ("\tinput_frames_used : %ld\n\n", src_data.input_frames_used) ;
+		printf ("\tinput_frames_used : %lld\n\n", src_data.input_frames_used) ;
 		exit (1) ;
 		} ;
 
@@ -152,15 +152,15 @@ varispeed_test (int converter, double target_snr)
 
 	if ((error = src_process (src_state, &src_data)))
 	{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
-		printf ("  src_data.input_frames  : %ld\n", src_data.input_frames) ;
-		printf ("  src_data.output_frames : %ld\n\n", src_data.output_frames) ;
+		printf ("  src_data.input_frames  : %lld\n", src_data.input_frames) ;
+		printf ("  src_data.output_frames : %lld\n\n", src_data.output_frames) ;
 		exit (1) ;
 		} ;
 
 	if (src_data.input_frames_used != input_len)
 	{	printf ("\n\nLine %d : unused input.\n", __LINE__) ;
 		printf ("\tinput_len         : %d\n", input_len) ;
-		printf ("\tinput_frames_used : %ld\n\n", src_data.input_frames_used) ;
+		printf ("\tinput_frames_used : %lld\n\n", src_data.input_frames_used) ;
 		exit (1) ;
 		} ;
 

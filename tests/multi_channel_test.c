@@ -125,11 +125,11 @@ simple_test (int converter, int channel_count, double target_snr)
 		} ;
 
 	if (fabs (src_data.output_frames_gen - src_data.src_ratio * src_data.input_frames) > 2)
-	{	printf ("\n\nLine %d : bad output data length %ld should be %d.\n", __LINE__,
+	{	printf ("\n\nLine %d : bad output data length %lld should be %d.\n", __LINE__,
 					src_data.output_frames_gen, (int) floor (src_data.src_ratio * src_data.input_frames)) ;
 		printf ("\tsrc_ratio  : %.4f\n", src_data.src_ratio) ;
-		printf ("\tinput_len  : %ld\n", src_data.input_frames) ;
-		printf ("\toutput_len : %ld\n\n", src_data.output_frames_gen) ;
+		printf ("\tinput_len  : %lld\n", src_data.input_frames) ;
+		printf ("\toutput_len : %lld\n\n", src_data.output_frames_gen) ;
 		exit (1) ;
 		} ;
 

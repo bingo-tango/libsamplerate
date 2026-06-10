@@ -27,8 +27,8 @@ typedef struct
 {	const float	*data_in ;
 	float	*data_out ;
 
-	long	input_frames, output_frames ;
-	long	input_frames_used, output_frames_gen ;
+	long long	input_frames, output_frames ;
+	long long   input_frames_used, output_frames_gen ;
 
 	int		end_of_input ;
 

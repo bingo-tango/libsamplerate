@@ -154,7 +154,7 @@ simple_test (int converter, double src_ratio)
 	terminate = (int) ceil ((src_ratio >= 1.0) ? src_ratio : 1.0 / src_ratio) ;
 
 	if (fabs (src_data.output_frames_gen - src_ratio * input_len) > 2 * terminate)
-	{	printf ("\n\nLine %d : bad output data length %ld should be %d.\n", __LINE__,
+	{	printf ("\n\nLine %d : bad output data length %lld should be %d.\n", __LINE__,
 					src_data.output_frames_gen, (int) floor (src_ratio * input_len)) ;
 		printf ("\tsrc_ratio  : %.4f\n", src_ratio) ;
 		printf ("\tinput_len  : %d\n\toutput_len : %d\n\n", input_len, output_len) ;

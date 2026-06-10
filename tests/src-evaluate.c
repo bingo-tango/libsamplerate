@@ -299,7 +299,7 @@ measure_destination_wav (char *filename, int *output_samples, int expected_peaks
 		} ;
 
 	if (sfinfo.frames > ARRAY_LEN (buffer))
-	{	printf ("Line %d : Too many frames (%ld) of data in file.\n", __LINE__, (long) sfinfo.frames) ;
+	{	printf ("Line %d : Too many frames (%lld) of data in file.\n", __LINE__, (long) sfinfo.frames) ;
 		exit (1) ;
 		} ;
 
